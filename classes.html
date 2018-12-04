@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="files/photos/icon.png">
+
+    <title>Nodir Kodirov: Computer Science at UBC</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.0.3/dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="files/misc/justified-nav.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <h3 class="text-muted">Nodir Kodirov</h3>
+        <ul class="nav nav-justified">
+          <li><a href="index.html">About</a></li>
+    		  <li><a href="publications.html">Projects & Publications</a></li>
+          <li class="active dropdown">
+            <a href="activity.html" class="dropdown-toggle" data-toggle="dropdown">Activities <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+      				<li><a href="detail.html">Resume details</a></li>
+            	<li class="active"><a href="classes.html">Classes</a></li>
+            	<li><a href="ta.html">Teaching assistanship</a></li>
+      				<li><a href="misc.html">Miscellaneous</a></li>
+            </ul>
+          </li>
+    		  <!-- <li><a href="uzbek.html">In Uzbek (O'zbekcha)</a></li> -->      
+    		  <li><a href="contacts.html">CV & Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="container">
+        <div class="page-header">
+          <h1>Classes at UBC</h1>
+          <p class="lead">A brief information about classes I took in UBC. What I've learned, the most important lesson I'd like to remember, and some fun facts.</p>
+        </div>
+
+        <h3><a href="https://www.cs.ubc.ca/~nickhar/W17" target="_blank">
+        CPSC 536N: Algorithms That Matter</a></h3>
+        <p> Yes, you read it right, as in the class instructor <a href="http://www.cs.ubc.ca/~nickhar/">Nick Harvey</a>'s prologue "All algorithms equally matter, but some matter more than others. - George Orwell (paraphrased)", this class was about algorithms used in practice. The class was particularly interesting as I always wanted to have an algorithmic insight to the systems at scale. We covered many topics relevant to the systems deployed today, including MapReduce, Submodular optimization, Graph sketching, Locality sensitive hashing, Online bipartite matching, AdWords, and Erasure codes, among many others. We had several assignments to solidify the concepts and also a final project.</p>
+
+        <p>For the final project, I teamed up with two other students to apply submodular optimization techniques to place a <a href="https://github.com/tensorflow/tensorflow">TensorFlow</a> graph in a distributed environment (many GPUs, CPU, and potentially TPUs). Our intuition was that node-to-device placement problem can be reduced to a submodular maximization problem and solved to find the placement with the shortest model training time. You can find more details in our <a href="files/classes/submodular-tensorflow.pdf" target="_blank">final report</a>.</p>
+
+        <h3><a href="http://www.cs.ubc.ca/~rxg/cpsc509/" target="_blank">
+        CPSC 509: Programming Language Principles</a></h3>
+        <p>This was a lecture, assignments, exams, and presentation based class
+        by <a href="http://www.cs.ubc.ca/~rxg/">Ronald Garcia</a>. The entire course can be summarized in a single sentence, as the instructor put it "[...] we model programs as mathematical objects in 
+        set theory, and programming languages as sets of programs and their meanings", which pretty much describes everything we learned in the class. If this sentence sounds too abstract to you, as it did to me before I took the class, here is the list of topics such set-theoretic approach serves as a foundation for: language sematics (both structural operational and big-step), proof by induction, reduction sematics, induction and coinduction, divergence, Floyd-Hoare program logics, procedures and recursion, type systems, static analysis and some more. At the end of the class, two peer students and I closely studied a paper, <a href="http://dl.acm.org/citation.cfm?id=2535862" target="_blank">NetKAT: Semantic Foundations for Networks</a> from <a href="http://popl.mpi-sws.org/2014/" target="_blank">POPL 2014</a>, and presented it using the concepts we got introduced to during the class. Download our presentation <a href="files/classes/netkat.pdf" target="_blank">here</a>.</p>
+
+        <h3><a href="http://www.cs.ubc.ca/~bestchai/teaching/cs538b_2014w2/index.html" target="_blank">CPSC 538B: Distributed Systems</a></h3>
+        <p>Yet another interesting seminar style, assignments and project based Systems class taught by <a href="http://www.cs.ubc.ca/~bestchai/">Ivan Beschastnikh</a>. Papers covered many topics with distributed systems angle, including clocks and snapshot in distributed systems, state machine replication, memory coherence, Paxos, fault tolerance, consistency, CAP theorem, DHT and P2P systems. Assignments were fun, time synchronization in distibuted systems using Berkeley algorithm, leader election and load-balanced key-value service. The fun part of the assignments was requirement to use <a href="https://golang.org/">Go programming language</a> only. This is the first time I started my Go programming and I'm very likely to stick with this language as much as I can. It's fast, well-designed, Github-friendly (write once read many times), and fun language. 
+
+				<p>Our class project, with fellow grad student, was about managing virtual middlebox state in container environment. The idea was to deploy and orchestrate middlebox functionality with containers (<a href="https://github.com/docker/docker">Docker</a>) and <a href="https://github.com/GoogleCloudPlatform/kubernetes">Kubernetes</a> cluster manager. The insight was that Kubernetes provides good abstractions for deploying wide range of applications, including middleboxes. In particular, <i>pod</i> is well-suited to wrap any middlebox functionality (or chain them together) and manage with <i>replication controller</i>. Replication controller becomes very handy to scale middleboxes up/down to respond to the dynamic load. Finally, <i>services</i> provide good abstraction to glue pods, including placement of middlebox pod layer on application processing pipeline. We developed sample rate-limiting firewall as Docker, wrapped it with pods, and scaled using replication controller. We then used <a href="https://github.com/coreos/etcd">etcd</a> to manage firewall's shared state and measured overhead (latency) imposed to the firewall due to externally managed shared-state. Our source code available on <a href="https://github.com/knodir/kubernetes/tree/master/VMC">Github</a>, here are <a href="files/classes/k8s-middlebox-slides.pdf">slides</a> and the <a href="files/classes/k8s-middlebox-report.pdf">report</a>.
+
+        <!-- div cs513 is here so that I can refer to this part of the page from somewhere else (mapper Github page for now) -->
+        <div id="cs513"> 
+          <h3><a href="http://www.cs.ubc.ca/~ajh/courses/cpsc513/index.html" target="_blank">CPSC 513: Integrated System Design </a> (a.k.a. automatic formal verification of computer systems)</h3>
+          <p>This was a mixed, lecture style (but with papers), assignments and project-based class taught by very enthusiastic professor <a href="http://www.cs.ubc.ca/~ajh">Alan Hu</a>. We read papers to get the general knowledge of the formal verification methods, and solidified them by doing assignments. Assignments were well-designed, large part of the code written by Alan, but with purposefully injected bug. Students were expected to find bug(s) using techniques introduced in the lecture and the papers. Topics we covered include boolean (binary) decision diagrams for program state representation, static analysis, (bounded) model checking, concrete and symbolic execution, symbolic reachability, constraint (SAT and SMT) solvers, predicate abstraction, and formal methods to represent discrete, continous and hybrid system, among others. </p>
+        
+          <p> My class project was about using <b>SMT solvers for data center resource allocation problem</b>. I ended up reproducing <a href="http://www.cis.upenn.edu/~alur/Fmcad13-vm.pdf">previous research</a> from <a href="http://www.cs.utexas.edu/users/hunt/FMCAD/FMCAD13/index.shtml">FMCAD'13</a>, and made an attemp to use different SMT solver (SAT Modulo Monotonic Theories) to improve performance. Check out project <a href="files/classes/smt-report.pdf">report</a>, <a href="files/classes/smt-slides.pdf">presentation</a>, and code in <a href="https://github.com/knodir/mapper">Github</a>. Oh, by the way, as a bonus, Alan arranged our class project presentations on <a href="http://en.wikipedia.org/wiki/Whistler,_British_Columbia">Whistler</a>, one of the best ski resorts in the World! Project itself and presentation was fun!
+        </div>
+
+        <h3><a href="http://www.cs.ubc.ca/~bestchai/teaching/cs538b_2013w2/index.html" target="_blank">CPSC 538B: Comprehension and Analysis of Large Systems</a></h3>
+        <p>This was another interesting seminar style, project based Systems class taught by <a href="http://www.cs.ubc.ca/~bestchai/">Ivan Beschastnikh</a>. Papers covered wide range software engineering, programming paradigms/tools to build distributed system, their debugging, performance analysis and etc. Course was a great blend between software engineering and (distributed) systems. For the class project, with the peer-grad student we've decided to continue my earlier (Data at Scale) class project. It was about study of increased number of syscalls at file systems. This time we wanted to conduct much deeper study and find the reason behind bloated system calls. Earlier study was on Mac OS X environment, impossible to analyze because of proprietary closed source code. Thus, we moved to Solaris 11 enviroment, where we got open source editor and analyzed syscalls starting from application layer all the way down to the drivers. We concluded that libraries are primary responsible for bloated calls, file system API does not contribute much for increased number of syscalls. Our <a href="https://github.com/knodir/proj_538b" target="_blank">  scripts</a> and <a href="files/classes/fs-study.pdf" target="_blank">report</a> is available online.</p>
+
+        <h3><a href="http://www.cs.ubc.ca/~kevinlb/teaching/cs532l%20-%202013-14/index.html" target="_blank">CPSC 532L: Foundations of Multiagent Systems</a></h3>
+        <p>Also known as <i>Game Theory</i> grad class, covering from simple two-player games to all the way to mechanism design, auctions was taught by award-winning instructor <a href="http://www.cs.ubc.ca/~kevinlb/" target="_blank">Kevin Leyton-Brown</a>. This was the most math challenging class so far. I'm sure my brain has been structurally transformed (especially while solving assignment problems), there should be lots of additional complex lines after this class. Once again I confirmed for myself that intuitional approach (rather than equation-driven math) to be much efficient (and fun) way of solving the problem.</p>
+        
+        <p>My class project was on Social Choice. It was based on <a href="http://dl.acm.org/citation.cfm?id=1622669">literature</a> review. I described axiomatic approach to the Ranking Systems. Although Google's PageRank algorithm was the main subject of the paper, I touched on eBay's reputation system and personalized ranking systems as well. My presentation is available <a href="files/classes/ranking-systems.pdf" target="_blank"> here</a>. Also, while deciding on the project topic, I've got interested in voting rules (area of Social Choice too). Then I set up small study on UBC's the most recent (2014) <a href="http://www.ams.ubc.ca/studentsociety/elections/">AMS election</a>. I collected public results and wrote  Python scripts to analyze the votes. I've basically replicated their mechanism. Meanwhile, I got closely familiar with voting mechanisms, too. My scripts are available <a href="#">here</a>.</p>
+
+        <h3><a href="http://www.cs.ubc.ca/~andy/538w-2013/" target="_blank">CPSC 538W: Data at Scale</a></h3>
+        <p>This was my first Systems course, taught by <a href="http://www.cs.ubc.ca/~andy/" target="_blank">Andrew Warfield</a>. We've read from classic and to the most recent papers about file systems, distrubuted computing, data center networking and almost everything has to do with large scale systems. This class has improved my academic paper reading/analyzing skills more than order of magnitude. I've got a bit more confident on presenting, too. Still a lots of space for improvement.</p>
+
+      	<p>As a class project, with the other peer grad student, we decided to do measurement study on file system use by modern applications. Our work was inspired by the best paper at SOSP'11 conference <b>A File is Not a File: Understanding the I/O Behavior of Apple Desktop Applications</b>. We've analyzed filesystem calls of several text editors and two web browsers. As a result, we not only reproduced result from the original paper, but wlso observed quite different behavior. Our project report is available <a href="files/classes/data-at-scale.pdf">here</a>.</p>
+
+        <h3><a href="http://www.cs.ubc.ca/~cs544/" target="_blank">CPSC 544: Human Computer Interaction</a></h3>
+        <p>This was introductory class to HCI product design, taught by <a href="http://www.cs.ubc.ca/~maclean/" target="_blank">Karon MacLean</a> Most of our effort went to the class project, where 3 grad students and I developed mobile application to connect moving-in/out people with movers. Later we discovered about UShip.com and then ended up developing mobile interface for it. Inspired by LinkedIn, our project was called <b>TruckedIn</b>, peer-to-peer connection between movees and movers.</p>
+      	
+      	<p>Focus of the class project was not development of application itself, but to experience several stages of HCI development - finding a human problem need better support, run user study to clarify actual need and pain points, and only then design a user-centric prototype to evaluate usability of our solution. Surprizingly (really!) we won <b>Best Recruting</b> award for working with truck drivers. Indeed, it took a lots of efforts to find, work with them. It was fun too, movers were excited to learn about our solution and try our cool iOS app. Project report is available <a href="files/classes/hci.pdf">here</a>.</p>
+      </div> <!-- /container -->
+
+      <!-- Site footer -->
+      <div class="footer">
+        <script language="JavaScript">
+          document.write('Last updated <i>June 24, 2018</i>. Powered by <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>');
+        </script>
+      </div> <!-- footer -->
+
+
+    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="bootstrap-3.0.3/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
