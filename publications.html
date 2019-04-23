@@ -34,7 +34,7 @@
         <h3 class="text-muted">Nodir Kodirov</h3>
         <ul class="nav nav-justified">
           <li><a href="index.html">About</a></li>
-    		  <li class="active"><a href="publications.html">Projects & Publications</a></li>
+    		  <li class="active"><a href="publications.html">Publications & Talks</a></li>
           <li class="dropdown">
             <a href="activity.html" class="dropdown-toggle" data-toggle="dropdown">Activities <b class="caret"></b></a>
             <ul class="dropdown-menu">
@@ -49,140 +49,212 @@
         </ul>
       </div>
 
-    <div class="container marketing">
-      <h3>Research projects</h3>
-      
-      <table class="projtable" cellpadding="8px">
+      <section id="publications" name="publications">
+        <!-- Publications -->
+        <div class="container desc">
+          <div class="row">
+            <h3>Recent</h3></br>
 
-      <tr>
-        <td style="width:25%">
-          <a href="files/papers/poster-ancs18.pdf">
-            <img class="logo" src="files/logos/chain.jpg" alt="chain-logo" />
-          </a>
-        </td>
-        <td><p class="projtitle"><a href="files/papers/poster-ancs18.pdf">VNF Chain Abstraction for Cloud Service Providers</a></p>
-          <p class="projdesc">
-            We propose VNF chain abstraction to decouple a tenant's view of the VNF chain from the cloud provider's implementation. We motivate the benefits of such an abstraction for the cloud provider as well as the tenants, and outline the challenges a cloud provider needs to address to make the chain abstraction practical. We describe the design requirements and report on our initial prototype.
-          </p>
-        </td>
-      </tr>
-
-      <tr>
-        <td style="width:25%">
-          <br><a href="files/papers/daisy-preprint-ancs18.pdf">
-            <img class="logo" src="files/logos/daisy.jpg" alt="daisy-logo" />
-          </a>
-        </td>
-        <td><p class="projtitle"><a href="files/papers/daisy-preprint-ancs18.pdf">VNF Chain Allocation and Management at Data Center Scale</a></p>
-          <p class="projdesc">
-            Offloading enterprise packet processing to the cloud is increasingly common. In this work, we propose a narrow API for tenants to manage VNF chains outsourced to the cloud. We also develop locality-aware chain scheduling algorithm, called NetPack, to implement the API while achieving high datacenter utilization for the cloud provider. We prototype a system, called Daisy, to demonstrate the feasibility of the algorithm and API. On a Facebook DC topology with 3072 servers Daisy's algorithm scheduled chains with 10 NFs in under 0.8 seconds on average while fully utilizing the network. This is 82x faster than a theoretically complete, constraint-solver-based chain placement engine.
-          </p>
-        </td>
-      </tr>
-
-      <tr>
-        <td style="width:25%">
-          <br><a href="files/papers/netsolver-ijcai17.pdf">
-            <img class="logo" src="files/logos/netsolver.jpg" alt="netsolver-logo" />
-          </a>
-        </td>
-        <td><p class="projtitle"><a href="files/papers/netsolver-ijcai17.pdf">NetSolver: Scalable Virtual Data Center Allocation</a></p>
-          <p class="projdesc">
-            NetSolver is an SMT-based VDC allocation tool for multi-path VDC allocation with end-to-end bandwidth guarantees. It scales to data centers with 1,000 or more servers, and can make allocations quickly enough to be applied in practice, while simultaneously improving data center utilization relative to previous work.
-          </p>
-        </td>
-      </tr>
+            <div class="col-lg-2 col-lg-offset-1">
+              <t><b>NSDI '19</b><br/>(<a href="files/papers/printed-poster-ancs18.pdf">poster</a>)</t>
+            </div>
+            <div class="col-lg-6">
+              <t><a href="files/papers/nsdi19-poster-2pager.pdf" target="_blank">Cutting Packet Fat in Shallow VNF Chain Processing</a></t><br/>
+              Swati Goswami, <b>Nodir Kodirov</b>, Ivan Beschastnikh<br/>
+              <font style="font-variant: small-caps">16th USENIX Symposium on Networked Systems Design and Implementation (NSDI), 2019</font>
+            </div>
+            <div class="col-lg-9 col-lg-offset-3">
+              <p>&nbsp;</p>
+            </div>
 
 
-      </table>
-
-      <br />
-      <h3>Selected conference papers</h3>
-  		<ul class="publications">
-
-        <li class="pub_list">
-          <a href="files/papers/daisy-preprint-ancs18.pdf">VNF Chain Allocation and Management at Data Center Scale</a>, <strong>Nodir Kodirov</strong>, Sam Bayless, Fabian Ruffy, Ivan Beschastnikh, Holger H. Hoos, Alan J. Hu. In Proceedings of ACM/IEEE Symposium on Architectures for Networking and Communications Systems (<a href="http://www.ancsconf.org/home/conference-program">ANCS'18</a>), July 23-24, 2018, Ithaca, NY, USA [<a href="files/papers/daisy-slides-ancs18.pptx">pptx slides</a>, <a href="files/papers/daisy-slides-ancs18.pdf">pdf slides</a>].
-        </li>
-
-				<li class="pub_list">
-          <a href="files/papers/netsolver-ijcai17.pdf">
-          Scalable Constraint-Based Virtual Data Center Allocation</a>, Sam Bayless, <strong>Nodir Kodirov</strong>, Ivan Beschastnikh, Holger H. Hoos, Alan J. Hu. International Joint Conference on Artificial Intelligence (<a href="https://www.ijcai.org/proceedings/2017/0077">IJCAI'17</a>), August 19-25, 2017, Melbourne, Australia.
-        </li>
-
-        <li class="pub_list">
-          <b>Cross-Stratum Optimization aware Provisioning Algorithm for Cloud Data Centers</b>, Shahnaza Tursunova, Taeho Lee, Nodir Kodirov and Taesang Choi. International Workshop on Cross-Stratum Optimization for Cloud Computing and Distributed Networked Applications (CSO 2012), July 13, 2012, Madrid, Spain. <i><a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6280339">IEEE link</a>.</i>
-        </li>
-			
-  			<li class="pub_list">
-          <b>Autonomic Brokering Agent for Multi-Cloud Environment Management</b>, <strong>Nodir Kodirov</strong>, Jaegi Lee, TaeSang Choi. Korean Network Operations and Management Conference (KNOM 2012), May 3-4, 2012, Jeju, Korea. <i><a href="http://knom.or.kr/conf/knom2012/">Conference homepage</a>.</i>
-        </li>
-			
-  			<li class="pub_list">
-          <b>Autonomic Management Framework for Cloud-based Virtual Networks</b>, Taesang Choi, <strong>Nodir Kodirov</strong>, Tae-Ho Lee, Doyeon Kim, Jaegi Lee. The 13th Asia-Pacific Network Operations and Management Symposium (APNOMS 2011), September 21-23, 2011. Taipei, Taiwan. <i><a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=6077011">IEEE link</a>.</i>
-        </li>
-  		</ul>
-
-      <h3>Talks & Posters</h3>
-
-      <ul class="publications">
-        <li class="pub_list">
-          <i>(talk)</a></i> VNF Chain Allocation and Management at Data Center Scale, a visitor talk at UWaterloo on August 22, 2018, Waterloo, ON, Canada.
-        </li>
-      </ul>
-
-      <ul class="publications">
-        <li class="pub_list">
-          <i><a href="https://twitter.com/CSDatCMU/status/1022200179007647746">(talk)</a></i> VNF Chain Allocation and Management at Data Center Scale, a visitor talk at CMU on July 25, 2018, Pittsburgh, PA, USA.
-        </li>
-      </ul>
-
-      <ul class="publications">
-        <li class="pub_list">
-          <i><a href="files/papers/printed-poster-ancs18.pdf">(poster) </a></i><a href="files/papers/poster-ancs18.pdf">VNF Chain Abstraction for Cloud Service Providers</a>, <strong>Nodir Kodirov</strong>, Sam Bayless, Fabian Ruffy, Ivan Beschastnikh, Holger H. Hoos, Alan J. Hu. At <a href="http://www.ancsconf.org/home/conference-program">ANCS'18</a>, July 23-24, 2018, Ithaca, NY, USA.
-        </li>
-      </ul>
-
-      <ul class="publications">
-        <li class="pub_list">
-          <i><a href="files/papers/daisy-slides-ancs18.pdf">(talk) </a></i><a href="files/papers/daisy-preprint-ancs18.pdf">VNF Chain Allocation and Management at Data Center Scale</a>, <strong>Nodir Kodirov</strong>, Sam Bayless, Fabian Ruffy, Ivan Beschastnikh, Holger H. Hoos, Alan J. Hu. Presented at <a href="http://www.ancsconf.org/home/conference-program">ANCS'18</a>, July 23-24, 2018, Ithaca, NY, USA.
-        </li>
-      </ul>
-
-      <ul class="publications">
-        <li class="pub_list">
-          <i><a href="files/papers/netsolver-vdc-poster.pdf">(poster)</a></i> <b>NetSolver: Scalable Constraint-based Virtual Data Center (VDC) Allocation</b>, <strong>Nodir Kodirov</strong>, Sam Bayless, Ivan Beschastnikh, Holger H. Hoos, Alan J. Hu, ICICS-ECE-IEEE <a href="http://icics.webi.it.ubc.ca/workshops/index.php/home/">Workshop</a>: Connectivity for the Internet of Things, May 12, 2017.
-        </li>
-      </ul>
-
-      <ul class="publications">
-        <li class="pub_list">
-          <i><a href="https://www.openstack.org/videos/video/quantifying-the-noisy-neighbor-problem-in-openstack">(talk)</a></i> <b>Quantifying the Noisy Neighbor Problem in Openstack</b>, Ajay Gulati, <strong>Nodir Kodirov</strong>, Gautam Kulkarni, <a href="https://www.openstack.org/summit/austin-2016/"> OpenStack Summit</a> 2016 in Austin, Texas, USA.
-        </li>
-      </ul>
+            <div class="col-lg-2 col-lg-offset-1">
+              <t><b>ANCS '18</b><br/>(<a href="files/papers/daisy-slides-ancs18.pdf">slides</a>)</t>
+            </div>
+            <div class="col-lg-6">
+              <t><a href="files/papers/daisy-preprint-ancs18.pdf" target="_blank">VNF Chain Allocation and Management at Data Center Scale</a></t><br/>
+              <b>N. Kodirov</b>, S. Bayless, F. Ruffy, I. Beschastnikh, H. H. Hoos, A. J. Hu.<br/>
+              <font style="font-variant: small-caps">The 14th ACM/IEEE Symposium on Architectures for Networking and Communications Systems (ANCS), 2018</font>
+            </div>
+            <div class="col-lg-9 col-lg-offset-3">
+              <p>&nbsp;</p>
+            </div>
 
 
-      <h3>Journal papers</h3>
-      <ul class="publications">
-        <li class="pub_list"><b>HiMang: Highly Manageable Network and Service Architecture for New Generation</b>, Taesang Choi, Tae-Ho Lee, <strong>Nodir Kodirov</strong>, Jaegi Lee, Doyeon Kim, Joon-Myung Kang, Sungsu Kim, John Strassner and James Won-Ki Hong. Journal of Communications and Networks (SCI-E, ISSN: 1229-2370), Vol. 13, No. 6, pp.552-566. December 2011. <i><a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6157472">IEEE link</a>.</i></li>
+            <div class="col-lg-2 col-lg-offset-1">
+              <t><b>ANCS '18</b><br/>(<a href="files/papers/printed-poster-ancs18.pdf">poster</a>)</t>
+            </div>
+            <div class="col-lg-6">
+              <t><a href="files/papers/poster-ancs18.pdf" target="_blank">VNF Chain Abstraction for Cloud Service Providers</a></t><br/>
+              <b>N. Kodirov</b>, S. Bayless, F. Ruffy, I. Beschastnikh, H. H. Hoos, A. J. Hu.<br/>
+              <font style="font-variant: small-caps">The 14th ACM/IEEE Symposium on Architectures for Networking and Communications Systems (ANCS), 2018</font>
+            </div>
+            <div class="col-lg-9 col-lg-offset-3">
+              <p>&nbsp;</p>
+            </div>
 
-        <li class="pub_list"><b>Performance enhancement of real-time computing for small unmanned helicopter autopilot</b>, <strong>Nodir Kodirov</strong>, Doo-Hyun Kim, Junyeong Kim, Seunghwa Song, Changjoo Moon. Aircraft Engineering and Aerospace Technology (SCI-E, ISSN 1748-8842), Vol. 83 Iss. 6, pp.344-352, 2011. <i><a href="http://www.emeraldinsight.com/doi/full/10.1108/00022661111173225">Journal link</a>.</i></li>
-      </ul>
 
-      <!-- <h3>Patents</h3>
-			<ul class="publications">
-		  	<li class="pub_list"><b>Autonomic Brokering Agent for Heterogeneous Cloud Environment</b>, International Patent Manage No. IP20111547, Korean Intellectual Property Office, September 29, 2011.</li>
-  			<li class="pub_list"><b>Private box algorithm</b>, Data encryption software, Uzbekistan Patent Bureau, registration No. DGU 01358, Registration date: August 31, 2007.</li>
-  		</ul> -->
-  	</div> <!-- container marketing -->
+            <div class="col-lg-2 col-lg-offset-1">
+              <t><b>IJCAI '17</b><br/></t>
+            </div>
+            <div class="col-lg-6">
+              <t><a href="files/papers/netsolver-ijcai17.pdf" target="_blank">Scalable Constraint-Based Virtual Data Center Allocation</a></t><br/>
+              Sam Bayless, <b>Nodir Kodirov</b>, Ivan Beschastnikh, Holger H. Hoos, Alan J. Hu.<br/>
+              <font style="font-variant: small-caps">The 26th International Joint Conference on Artificial Intelligence (IJCAI), 2017</font>
+            </div>
+            <div class="col-lg-9 col-lg-offset-3">
+              <p>&nbsp;</p>
+            </div>
+
+
+            <div class="col-lg-2 col-lg-offset-1">
+              <t><b>Workshop '17</b><br/>(<a href="files/papers/netsolver-vdc-poster.pdf">poster</a>)</t>
+            </div>
+            <div class="col-lg-6">
+              <t>NetSolver: Scalable Constraint-based Virtual Data Center (VDC) Allocation</t><br/>
+              <b>Nodir Kodirov</b>, Sam Bayless, Ivan Beschastnikh, Holger H. Hoos, Alan J. Hu<br/>
+              <font style="font-variant: small-caps">ICICS-ECE-IEEE <a href="http://icics.webi.it.ubc.ca/workshops/index.php/home/">Workshop</a>: Connectivity for the Internet of Things, 2017</font>
+            </div>
+            <div class="col-lg-9 col-lg-offset-3">
+              <p>&nbsp;</p>
+            </div>
+
+
+          </div> <!-- /row -->
+
+
+          <div class="row">
+            <h3>Older papers (selected)</h3></br>
+
+            <div class="col-lg-2 col-lg-offset-1">
+              <t><b>ISPA '12</b><br/></t>
+            </div>
+            <div class="col-lg-6">
+              <t><a href="files/papers/ispa12.pdf" target="_blank">Cross-Stratum Optimization aware Provisioning Algorithm for Cloud Data Centers</a></t><br/>
+              Shahnaza Tursunova, Tae-Ho Lee, <b>Nodir Kodirov</b>, Tae-Sang Choi<br/>
+              <font style="font-variant: small-caps">IEEE 10th International Symposium on Parallel and Distributed Processing with Applications (ISPA), 2012</font>
+            </div>
+            <div class="col-lg-9 col-lg-offset-3">
+              <p>&nbsp;</p>
+            </div>
+
+
+            <div class="col-lg-2 col-lg-offset-1">
+              <t><b>KNOM '12</b><br/></t>
+            </div>
+            <div class="col-lg-6">
+              <t><a href="files/papers/knom12.pdf" target="_blank">Towards Optimal Resource Management for Cloud Data Centers</a></t><br/>
+              Shahnaza Tursunova, Tae-Ho Lee, <b>Nodir Kodirov</b>, Tae-Sang Choi<br/>
+              <font style="font-variant: small-caps">Proceeding of Korean Network Operations and Management (KNOM) Conference, 2012</font>
+            </div>
+            <div class="col-lg-9 col-lg-offset-3">
+              <p>&nbsp;</p>
+            </div>
+
+
+            <div class="col-lg-2 col-lg-offset-1">
+              <t><b>APNOMS '11</b><br/></t>
+            </div>
+            <div class="col-lg-6">
+              <t><a href="files/papers/apnoms11.pdf" target="_blank">Autonomic Management Framework for Cloud-based Virtual Networks</a></t><br/>
+              Taesang Choi, <b>Nodir Kodirov</b>, Tae-Ho Lee, Doyeon Kim, Jaegi Lee<br/>
+              <font style="font-variant: small-caps">IEEE 13th Asia-Pacific Network Operations and Management Symposium (APNOMS), 2011</font>
+            </div>
+            <div class="col-lg-9 col-lg-offset-3">
+              <p>&nbsp;</p>
+            </div>
+
+
+          </div> <!-- /row -->
+
+
+          <div class="row">
+            <h3>Talks</h3></br>
+
+            <div class="col-lg-2 col-lg-offset-1">
+              <t><b>UWaterloo '18</b><br/></t>
+            </div>
+            <div class="col-lg-6">
+              <t>VNF Chain Allocation and Management at Data Center Scale</t><br/>
+              August 22, 2018; host <a href="https://cs.uwaterloo.ca/~bernard/">Bernard Wong</a>, University of Waterloo, ON, Canada<br/>
+            </div>
+            <div class="col-lg-9 col-lg-offset-3">
+              <p>&nbsp;</p>
+            </div>
+
+
+            <div class="col-lg-2 col-lg-offset-1">
+              <t><b>CMU '18</b><br/></t>
+            </div>
+            <div class="col-lg-6">
+              <t>VNF Chain Allocation and Management at Data Center Scale</t><br/>
+              <a href="https://twitter.com/CSDatCMU/status/1022200179007647746">July 25, 2018</a>; host <a href="http://www.justinesherry.com">Justine Sherry</a>, Carnegie Mellon University, PA, USA<br/>
+            </div>
+            <div class="col-lg-9 col-lg-offset-3">
+              <p>&nbsp;</p>
+            </div>
+
+
+            <div class="col-lg-2 col-lg-offset-1">
+              <t><b>OpenStack '16</b><br/>
+              (<a href="files/papers/openstack16.pdf">slides</a>,
+              <a href="https://www.openstack.org/videos/summits/austin-2016/quantifying-the-noisy-neighbor-problem-in-openstack">talk</a>)</t>
+            </div>
+            <div class="col-lg-6">
+              <t><a href="https://www.openstack.org/videos/summits/austin-2016/quantifying-the-noisy-neighbor-problem-in-openstack"> Quantifying the Noisy Neighbor Problem in Openstack</a></t><br/>
+              April 28, 2016; with <a href="https://www.linkedin.com/in/ajaygulaticloud/">Ajay Gulati</a> and <a href="https://www.linkedin.com/in/gautam-kulkarni-4579781/">Gautam Kulkarni</a>, Austin, TX, USA<br/>
+            </div>
+            <div class="col-lg-9 col-lg-offset-3">
+              <p>&nbsp;</p>
+            </div>
+
+
+          </div> <!-- /row -->
+
+
+          <div class="row">
+            <h3>Journal papers (selected)</h3></br>
+
+            <div class="col-lg-2 col-lg-offset-1">
+              <t><b>JCN '11</b><br/></t>
+            </div>
+            <div class="col-lg-6">
+              <t><a href="files/papers/jcn11.pdf" target="_blank">HiMang: Highly Manageable Network and Service Architecture for New Generation</a></t><br/>
+              T. Choi, T. Lee, <b>N. Kodirov</b>, J. Lee, D. Kim, J. Kang, S. Kim, J. Strassner, and J. W. Hong<br/>
+              <font style="font-variant: small-caps">IEEE Journal of Communications and Networks (JCN), 2011</font>
+            </div>
+            <div class="col-lg-9 col-lg-offset-3">
+              <p>&nbsp;</p>
+            </div>
+
+
+            <div class="col-lg-2 col-lg-offset-1">
+              <t><b>AEAT '11</b><br/></t>
+            </div>
+            <div class="col-lg-6">
+              <t><a href="files/papers/aeat11.pdf" target="_blank">Performance enhancement of real-time computing for small unmanned helicopter autopilot</a></t><br/>
+              <b>Nodir Kodirov</b>, Doo-Hyun Kim, Junyeong Kim, Seunghwa Song, Changjoo Moon<br/>
+              <font style="font-variant: small-caps">Aircraft Engineering and Aerospace Technology, 2011</font>
+            </div>
+            <div class="col-lg-9 col-lg-offset-3">
+              <p>&nbsp;</p>
+            </div>
+
+
+          </div> <!-- /row -->
+
+
+        </div> <!-- /container -->
+      </section>
 
       <!-- Site footer -->
       <div class="footer">
         <script language="JavaScript">
-          document.write('Last updated <i>August 26, 2018</i>. Powered by <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>');
-        </script>
+          document.write('Last updated <i>April 23, 2019</i>. Powered by <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>');
+        </script>        
       </div> <!-- footer -->
 
-  </div> <!-- /container -->
+    </div> <!-- /container -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
