@@ -66,3 +66,10 @@
         src: ~/workspace/dev/dotfiles/sample.yml
         dest: ~/.tmuxinator/sample.yml
 
+    - git:
+        repo: https://github.com/VundleVim/Vundle.vim.git
+        dest: ~/.vim/bundle/Vundle.vim
+
+    - name: install vim plugins
+      shell: vim -E -s -c "source ~/.vimrc" -c PluginInstall -c qa
+
